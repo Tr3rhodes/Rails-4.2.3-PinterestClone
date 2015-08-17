@@ -13,6 +13,7 @@ gem 'bootstrap-generators', '~> 3.3.4'
 gem 'angularjs-rails'
 gem 'pg'
 gem 'rails_12factor'
+gem 'giphy'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'

@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-GOT_GIFS = Giphy.search('game of thornes', {limit: 50})
+GOT_GIFS = Giphy.search('game of thrones', {limit: 50})
 
 counter = 0
 10.times do
