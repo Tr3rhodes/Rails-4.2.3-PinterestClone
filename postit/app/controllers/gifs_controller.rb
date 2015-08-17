@@ -7,6 +7,7 @@ class GifsController < ApplicationController
   # GET /gifs.json
   def index
     @gifs = Gif.order("created_at DESC")
+    @gif = Gif.new
   end
 
   # GET /gifs/1
@@ -79,6 +80,6 @@ class GifsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def gif_params
-      params.require(:gif).permit(:user_id, :description, :picture)
+      params.require(:gif).permit(:user_id, :description, :picture )
     end
 end

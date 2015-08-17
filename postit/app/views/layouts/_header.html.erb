@@ -9,7 +9,7 @@
           Logged in as  <strong><%= current_user.email %></strong>
           </li>
           <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
-            <li><%= link_to 'New Gif', new_gif_path %></li>
+            <li></li>
             <li><%= link_to "My Gifs", gifs_path %></li>
          <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
     <% else %>
