@@ -1,10 +1,11 @@
-<%= form_for(@gif) do |f| %>
+
+<%= bootstrap_form_for (@gif) do |f| %>
   <% if @gif.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@gif.errors.count, "error") %> prohibited this gif from being saved:</h2>
+      <h2><%= pluralize(gif.errors.count, "error") %> prohibited this gif from being saved:</h2>
 
       <ul>
-      <% @gif.errors.full_messages.each do |message| %>
+      <% gif.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -12,19 +13,29 @@
   <% end %>
 
 
-
+  <div class="modal fade" id="form" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">New G </h4>
+        </div>
+        <div class="modal-body">
   <div class="field">
-    <%= f.label :description %><br>
     <%= f.text_field :description %>
   </div>
-
   <div class="field">
-    <%= f.label :picture %><br>
     <%= f.text_field :picture %>
   </div>
-
-
   <div class="actions">
     <%= f.submit %>
   </div>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+  <button type="button" class="btn btn-primary">Save changes</button>
+</div>
+</div>
+</div>
+</div>
 <% end %>
