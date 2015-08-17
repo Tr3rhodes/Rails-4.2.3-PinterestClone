@@ -15,11 +15,13 @@
                         <%= f.text_field :picture %>
                       </div>
 
-                    <% end %>
       </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Create</button>
-
+            <!-- <button type="button" class="btn btn-default" data-dismiss="modal"></button> -->
+            <div class="actions">
+              <%= f.submit %>
+            </div>
+          <% end %>
           </div>
     </div>
   </div>

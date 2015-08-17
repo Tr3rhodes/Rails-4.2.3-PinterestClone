@@ -13,7 +13,6 @@ class GifsController < ApplicationController
   # GET /gifs/1
   # GET /gifs/1.json
   def show
-
   end
 
   # GET /gifs/new
@@ -39,7 +38,7 @@ class GifsController < ApplicationController
 
     respond_to do |format|
       if @gif.save
-        format.html { redirect_to @gif, notice: 'Gif was successfully created.' }
+        format.html { redirect_to gifs_path, notice: 'Gif was successfully created.' }
         format.json {  }
       else
         format.html { render :new }
