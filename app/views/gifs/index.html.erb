@@ -1,7 +1,8 @@
 <p id="notice"><%= notice %></p>
-
+<% if user_signed_in? %>
 <h1>Listing Gifs</h1><%= link_to 'New Gif', "#", "data-toggle" => "modal", "data-target" => "#new_gif_modal" %>
 <%= render :partial => "gifs/new" %>
+<%end%>
 
 
 <div class="container">
