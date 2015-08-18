@@ -1,0 +1,29 @@
+<!-- Modal -->
+<div class="modal fade" id="new_gif_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h3 class="modal-title" id="myModalLabel">Create New Gif</h3>
+      </div>
+      <div class="modal-body">
+                    <%= bootstrap_form_for(@gif) do |f| %>
+                      <div class="field">
+                        <%= f.text_field :description %>
+                      </div>
+                      <div class="field">
+                        <%= f.text_field :picture %>
+                        <%= f.attachment_field :file %>
+                      </div>
+
+      </div>
+          <div class="modal-footer">
+            <!-- <button type="button" class="btn btn-default" data-dismiss="modal"></button> -->
+            <div class="actions">
+              <%= f.submit %>
+            </div>
+          <% end %>
+          </div>
+    </div>
+  </div>
+</div>
