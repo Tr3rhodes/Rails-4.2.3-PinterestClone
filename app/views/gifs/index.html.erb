@@ -11,9 +11,13 @@
     <div class="row">
       <% row.each do |gif| %>
         <div class= "col-xs-3">
+
           <%= link_to image_tag(gif.picture, :class => "img-responsive"), "#","data-toggle" => "modal", "data-target" => "#myModal#{gif.id}" %>
           <%= render :partial => "gifs/myModal", :locals => {:gif => gif} %>
+          <%= image_tag attachment_url(@gif, :file, format: "gif") %>
+          <% if user_signed_in? %>
           <%= link_to "Destroy", gif_path(gif), method: :delete  %>
+          <%end%>
         </div>
       <% end %>
     </div>

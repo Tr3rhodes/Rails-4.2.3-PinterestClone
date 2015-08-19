@@ -15,8 +15,11 @@ gem 'pg'
 gem 'rails_12factor'
 gem 'giphy'
 
-gem 'refile', require: 'refile/rails'
-gem 'refile-mini_magick'
+gem "refile", require: "refile/rails"
+gem "refile-mini_magick"
+gem 'remotipart', '~> 1.2'
+gem 'refile-postgres'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views

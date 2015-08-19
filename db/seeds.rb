@@ -19,7 +19,7 @@ counter = 0
   )
 
   5.times do
-    url = GOT_GIFS[counter].original_picture.to_s
+    url = GOT_GIFS[counter].original_image.url.to_s
     gif = Gif.create!(picture: url)
     user.gifs << gif
     counter = counter + 1
