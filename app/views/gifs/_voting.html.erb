@@ -1,0 +1,41 @@
+<div class="modal-footer" >
+  <div class="well"><%= gif.picture || attachment_url(gif, :file) %></div>
+  <% if user_signed_in? %>
+    <%= link_to 'Edit', edit_gif_path(gif), class: "btn btn-default btn-sm" %>
+      <div class="btn-group">
+        <ul class="list-inline">
+        <% if current_user.voted_up_on?(gif) %>
+          <%= button_to upvote_gif_path(gif), class: "btn btn-default btn-sm", remote: true do %>
+            <li class="disabled"><i class="glyphicon glyphicon-triangle-top"> Upvote</i></li>
+          <% end %>
+          <%= button_to downvote_gif_path(gif), class: "btn btn-default btn-sm", remote: true do %>
+            <li class="glyphicon glyphicon-triangle-bottom"> Downvote </li>
+          <% end %>
+        <% elsif current_user.voted_down_on?(gif) %>
+          <%= button_to upvote_gif_path(gif), class: "btn btn-default btn-sm", remote: true do %>
+            <li class="glyphicon glyphicon-triangle-top"> Upvote</li>
+          <% end %>
+          <%= button_to downvote_gif_path(gif), class: "btn btn-default btn-sm", remote: true do %>
+            <li class="disabled"><i class="glyphicon glyphicon-triangle-bottom"> Downvote </i></li>
+          <% end %>
+        <% else %>
+          <%= button_to upvote_gif_path(gif), class: "btn btn-default btn-sm", remote: true do %>
+            <li class="glyphicon glyphicon-triangle-top"> Upvote</li>
+          <% end %>
+          <%= button_to downvote_gif_path(gif), class: "btn btn-default btn-sm", remote: true do %>
+            <li class="glyphicon glyphicon-triangle-bottom"> Downvote </li>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <button class="btn btn-default" data-dismiss="modal" type="button">Close</button>
+</div>
+
+
+
+
+
+
+
+<!-- Help From Tad -->

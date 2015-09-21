@@ -4,16 +4,16 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></br>
         <h4 class="modal-title" id="myModalLabel"><%= gif.description %> </h4>
       </div>
       <div class="modal-body">
+        <ul>
         <%= image_tag(gif.picture) %>
+        Created <%= time_ago_in_words(gif.created_at)%> ago by <%= gif.user.email %>
+      </ul>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Exit</button>
-
-      </div>
+      <%= render partial: 'voting', :locals => {:gif => gif} %>
     </div>
   </div>
 </div>

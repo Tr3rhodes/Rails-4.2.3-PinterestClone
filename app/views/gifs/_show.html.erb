@@ -1,0 +1,15 @@
+<div class="container" id="index">
+
+  <% @gifs.each_slice(4) do |row| %>
+    <div class="row">
+      <% row.each do |gif| %>
+        <div class= "col-xs-3">
+
+          <%= link_to image_tag(gif.picture, :class => "img-responsive"), "#","data-toggle" => "modal", "data-target" => "#myModal#{gif.id}" %>
+          <%= render :partial => "myModal", :locals => {:gif => gif} %>
+          <%= image_tag attachment_url(@gif, :file, format: "gif") %>
+        </div>
+      <% end %>
+    </div>
+  <%end%>
+</div>

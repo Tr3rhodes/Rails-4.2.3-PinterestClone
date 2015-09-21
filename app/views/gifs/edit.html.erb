@@ -2,5 +2,6 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @gif %> |
+<%= link_to 'Show', @gif %>
+<%= link_to 'Delete', gif_path(@gif), :method => :delete %>
 <%= link_to 'Back', gifs_path %>

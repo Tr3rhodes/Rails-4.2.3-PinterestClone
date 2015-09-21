@@ -35,9 +35,9 @@ class GifsController < ApplicationController
   def create
     @gif = Gif.new(gif_params)
     @gif.user_id = current_user.id
-
     respond_to do |format|
       if @gif.save
+        @gifs = Gif.order("created_at DESC")
         format.html { redirect_to gifs_path, notice: 'Gif was successfully created.' }
         format.js { }
       else
@@ -70,6 +70,17 @@ class GifsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def upvote
+    @gif.liked_by current_user
+    redirect_to @gif
+  end
+
+  def downvote
+    @gif.downvote_from current_user
+    redirect_to @gif
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
